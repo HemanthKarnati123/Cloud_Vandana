@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Customer Survey Form</title>
+    <style>
+        .body {
+            border: #61eaf4;
+            border-style: solid;
+            background-color: #61eaf4;
+        }
+
+        .table {
+            border: #f461e8;
+            border-style: solid;
+            background-color: silver;
+            border-radius: 10px;
+        }
+
+        .button {
+            border: green;
+            text-align: center;
+            background-color: green;
+            color: antiquewhite;
+            width: 100px;
+            height: 30px;
+        }
+
+        input {
+            border-style: solid;
+            border-radius: 5px;
+        }
+
+        select {
+            border-style: solid;
+            border-radius: 5px;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <form id="surveyForm">
+        <table align="center" cellpadding="5px" cellspacing="5px" class="table">
+            <caption class="id">
+                <h1>Customer Survey Form</h1>
+            </caption>
+            <tr>
+                <td>
+                    <label for="firstName">First Name</label><br />
+                    <input type="text" id="firstName" required />
+                </td>
+                <td>
+                    <label for="lastName">Last Name</label><br />
+                    <input type="text" id="lastName" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="dob">Date of Birth</label><br />
+                    <input type="date" id="dob" required />
+                </td>
+                <td>
+                    <label for="country">Country</label><br />
+                    <select id="country" required>
+                        <option value="United States">United States</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Chaina">Chaina</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="India">India</option>
+                        <option value="Russia">Russia</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Singapore">Singapore</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Gender</label><br />
+                    <input type="checkbox" id="male" value="Male" />Male &nbsp; <input type="checkbox" id="female"
+                        value="Female" />Female
+                </td>
+                <td>
+                    <label for="profession">Profession</label><br />
+                    <input type="text" id="profession" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email</label><br />
+                    <input type="email" id="email" required />
+                </td>
+                <td>
+                    <label for="mobile">Mobile Number</label><br />
+                    <input type="tel" id="mobile" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="submitForm()" class="button">Submit</button>
+                </td>
+                <td>
+                    <button type="button" onclick="resetForm()" class="button">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div class="overlay" onclick="closePopup()"></div>
+    <div class="popup" id="popup"></div>
+
+    <script>
+        function submitForm() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const dob = document.getElementById('dob').value;
+            const country = document.getElementById('country').value;
+            const genderOptions = document.querySelectorAll('input[type="checkbox"]:checked');
+            const gender = Array.from(genderOptions).map(option => option.value).join(', ');
+            const profession = document.getElementById('profession').value;
+            const email = document.getElementById('email').value;
+            const mobile = document.getElementById('mobile').value;
+
+            if (!firstName || !lastName || !dob || !country || !gender || !profession || !email || !mobile) {
+                alert('Please fill in all the fields.');
+                return;
+            }
+            const popupContent = `
+                <p><strong>First Name:</strong> ${firstName}</p>
+                <p><strong>Last Name:</strong> ${lastName}</p>
+                <p><strong>Date of Birth:</strong> ${dob}</p>
+                <p><strong>Country:</strong> ${country}</p>
+                <p><strong>Gender:</strong> ${gender}</p>
+                <p><strong>Profession:</strong> ${profession}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Mobile Number:</strong> ${mobile}</p>
+            `;
+            document.getElementById('popup').innerHTML = popupContent;
+            document.querySelector('.overlay').style.display = 'block';
+            document.querySelector('.popup').style.display = 'block';
+            resetForm();
+        }
+
+        function resetForm() {
+            document.getElementById('surveyForm').reset();
+        }
+
+        function closePopup() {
+            document.querySelector('.overlay').style.display = 'none';
+            document.querySelector('.popup').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
