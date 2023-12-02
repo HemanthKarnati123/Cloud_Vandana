@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Customer Survey Form</title>
+        <style>
+            .body{
+                border:#61eaf4;
+                border-style: solid;
+                background-color:#61eaf4 ;
+            }
+            .table{
+                border:#f461e8;
+                border-style: solid;
+                background-color:silver;
+                border-radius: 10px;
+            }
+            .button{
+                border: green;
+                text-align: center;
+                background-color: green;
+                color: antiquewhite;
+                width: 100px;
+                height: 30px;
+            }
+            input{
+                border-style: solid;
+                border-radius: 5px;
+            }
+            select{
+                border-style: solid;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body class="body">
+        <form onsubmit="submitAction()" name="forms">
+            <table align="center" cellpadding="5px" cellspacing="5px" class="table">
+              <caption><h1>Customer Survey Form</h1></caption>
+                <tr>
+                    <td >
+                        <label id="id1">First Name</label><br/>
+                        <input type="text" id="id1" name="First_Name"/>
+                    </td>
+                    <td >
+                        <label id="id2">Last Name</label><br/>
+                        <input type="text" id="id2" name="Last_Name"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label id="id3">Date of Birth</label><br/>
+                        <input type="date" id="id3" name="Date of Birth"/>
+                    </td>
+                    <td>
+                        <label id="id4">Country</label><br/>
+                        <select id="id4" name="Country">
+                            <option value="United States">United States</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Chaina">Chaina</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="India">India</option>
+                            <option value="Russia">Russia</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Singapore">Singapore</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label id="id5">Gender</label><br/>
+                    <input type="checkbox" id="id5" name="Gender" value="Male"/>Male &nbsp; <input type="checkbox" id="id5" name="Gender" value="Female"/>Female
+                    </td>
+                    <td>
+                        <label id="id6">Profession</label><br/>
+                        <input type="text" id="id6" name="Profession"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label id="id7">Email</label><br/>
+                        <input type="email" id="id7" name="Email"/>
+                    </td>
+                    <td>
+                        <label id="id8">Mobile Number</label><br/>
+                        <input type="text" id="id8" name="Mobile Number"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="SUBMIT" id="submit" class="button"/>
+                    </td>
+                    <td>
+                        <input type="reset" value="RESET" id="reset" class="button"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <script>
+            var requiredJSONData={};
+            console.log("name",document.forms["forms"]["First_Name"].value)
+            var submitButton=document.getElementById("form");
+            var FirstName=document.getElementById('id1');
+            FirstName.addEventListener('input',function(event){
+                event.preventDefault();
+                console.log("last",FirstName.value);
+            })
+            var LastName=document.getElementById('id2');
+            var DateofBirth=document.getElementById('id3');
+            var Country=document.getElementById('id4');
+            var Gender=document.getElementById('id5');
+            var Profession=document.getElementById('id6');
+            var Email=document.getElementById('id7');
+            var MobileNumber=document.getElementById('id8');
+              function submitAction(event){
+                  event.preventDefault();
+                 console.log("FirstName",FirstName.value)
+                 requiredJSONData.FirstName=FirstName.value
+                 requiredJSONData.LastName=LastName.value
+                 requiredJSONData.DateofBirth=DateofBirth.value
+                 requiredJSONData.Country=Country.value
+                 requiredJSONData.Gender=Gender.value
+                 requiredJSONData.Profession=Profession.value
+                 requiredJSONData.Email=Email.value
+                 requiredJSONData.MobileNumber=MobileNumber.value
+            };
+            
+        </script>
+    </body>
+</html>

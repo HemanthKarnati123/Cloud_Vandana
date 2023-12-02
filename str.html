@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    <div>
+        <label >Enter a Sentence</label>
+        <input type="text" name="name1" id="Sentence" style="width: 10cm;">
+        <button id="submit">submit</button>
+        <p id="result">
+
+        </p>
+    </div>
+    <script>
+        var submit=document.getElementById("submit");
+        submit.addEventListener('click',function(){
+            var str=document.getElementById('Sentence').value;
+            let reversedStr = str.split(' ');
+        let result="";
+        for(let i=0;i<reversedStr.length;i++){
+            let x=reversedStr[i].split('').reverse().join('');
+            result=result+x+" ";
+        }
+        document.getElementById('result').textContent=result;
+        })
+
+        // let str=window.prompt("Please Enter a Sentence");
+        // // let str = 'This is a Sunny Day'; // sihT si a ynnuS yaD
+        // let reversedStr = str.split(' ');
+        // let result="";
+        // for(let i=0;i<reversedStr.length;i++){
+        //     let x=reversedStr[i].split('').reverse().join('');
+        //     result=result+x+" ";
+        // }
+        // console.log(result);
+        // window.alert("The reverse String is : "+result); 
+    </script>
+</body>
+
+</html>

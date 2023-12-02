@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator App</title>
+    <link rel="stylesheet" href="calculator.css" />
+</head>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+<body bgcolor="grey">
+    <form class="center">
+        <table cellspacing="0px" align="center">
+            <tr>
+                <td colspan="3" class="sr">
+                    <input type="text" name="name1" class="sr" />
+                </td>
+                <td class="cl">
+                    <input type="reset" name="clear" value="AC" class="cl" />
+                </td>
+            </tr>
+            <tr>
+                <td class="myButtons"><input type="button" name="nine" value="9" onclick="name1.value+='9'"
+                        class="myButtons" /></td>
+                <td class="myButtons"><input type="button" name="eight" value="8" onclick="name1.value+='8'"
+                        class="myButtons" /></td>
+                <td class="myButtons"><input type="button" name="seven" value="7" onclick="name1.value+='7'"
+                        class="myButtons" /></td>
+                <td class="art"><input type="button" name="plus" value="+" onclick="name1.value+='+'" class="art" />
+                </td>
+            </tr>
+            <tr>
+                <td class="myButtons"><input type="button" name="four" value="4" onclick="name1.value+='4'"
+                        class="myButtons" /></td>
+                <td class="myButtons"><input type="button" name="five" value="5" onclick="name1.value+='5'"
+                        class="myButtons" /></td>
+                <td class="myButtons"><input type="button" name="six" value="6" onclick="name1.value+='6'"
+                        class="myButtons" /></td>
+                <td class="art"><input type="button" name="minus" value="-" onclick="name1.value+='-'" class="art" />
+                </td>
+            </tr>
+            <tr>
+                <td class="myButtons"><input type="button" name="one" value="1" onclick="name1.value+='1'"
+                        class="myButtons" /></td>
+                <td class="myButtons"><input type="button" name="two" value="2" onclick="name1.value+='2'"
+                        class="myButtons" /></td>
+                <td class="myButtons"><input type="button" name="three" value="3" onclick="name1.value+='3'"
+                        class="myButtons" /></td>
+                <td class="art"><input type="button" name="division" value="/" onclick="name1.value+='/'" class="art" />
+                </td>
+            </tr>
+            <tr>
+                <td class="myButtons"><input type="button" name="point" value="." onclick="name1.value+='.'"
+                        class="myButtons" /></td>
+                <td class="myButtons"><input type="button" name="zero" value="0" onclick="name1.value+='0'"
+                        class="myButtons" /></td>
+                <td class="myButtons"><input type="button" name="equal" value="="
+                        onclick="name1.value=eval(name1.value)" class="myButtons" /></td>
+                <td class="art"><input type="button" name="multiplication" value="*" onclick="name1.value+='*'"
+                        class="art" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+.myButtons {
+    text-align: center;
+    background-color: black;
+    margin: none;
+    color: white;
+    border-color: black;
+    width: 50px;
+    height: 30px;
+    border: black;
+    border-style: solid;
+
+}
+
+.col {
+    padding-right: 0px;
+}
+
+.art {
+    text-align: center;
+    background-color: #565551;
+    margin: none;
+    color: white;
+    border-color: #565551;
+    width: 50px;
+    height: 30px;
+    border: #565551;
+    border-style: solid;
+}
+
+.cl {
+    text-align: center;
+    background-color: #1e8c6f;
+    margin: none;
+    color: white;
+    border-color: #1e8c6f;
+    width: 50px;
+    height: 30px;
+    border: #1e8c6f;
+    border-style: solid;
+}
+
+.sr {
+
+    background-color: white;
+    margin: none;
+    color: black;
+    border-color: white;
+    border: white;
+    border-style: solid;
+    width: 150px;
+    height: 30px;
+}
